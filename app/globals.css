@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Dynamic accent color utilities */
+  .text-accent {
+    color: hsl(var(--primary));
+  }
+
+  .bg-accent {
+    background-color: hsl(var(--primary));
+  }
+
+  .border-accent {
+    border-color: hsl(var(--border));
+  }
+
+  .ring-accent {
+    --tw-ring-color: hsl(var(--ring));
+  }
+
+  .bg-accent-muted {
+    background-color: hsl(var(--accent) / 0.2);
+  }
+
+  .border-accent-muted {
+    border-color: hsl(var(--border) / 0.2);
+  }
+
+  .hover\:bg-accent-muted:hover {
+    background-color: hsl(var(--accent) / 0.2);
+  }
+
+  /* Override specific teal classes */
+  .text-teal-500 {
+    color: hsl(var(--primary)) !important;
+  }
+
+  .bg-teal-500 {
+    background-color: hsl(var(--primary)) !important;
+  }
+
+  .border-teal-900\/20 {
+    border-color: hsl(var(--border) / 0.2) !important;
+  }
+
+  .bg-teal-900\/20 {
+    background-color: hsl(var(--accent) / 0.2) !important;
+  }
+
+  .hover\:bg-teal-900\/20:hover {
+    background-color: hsl(var(--accent) / 0.2) !important;
+  }
+
+  .border-teal-900\/30 {
+    border-color: hsl(var(--border) / 0.3) !important;
+  }
+
+  .text-teal-300 {
+    color: hsl(var(--primary) / 0.8) !important;
+  }
+
+  .text-teal-400 {
+    color: hsl(var(--primary) / 0.9) !important;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 180 84% 60%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 180 84% 15%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 180 84% 25%;
+    --input: 0 0% 89.8%;
+    --ring: 180 84% 60%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 180 84% 60%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 180 84% 15%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 180 84% 25%;
+    --sidebar-ring: 180 84% 60%;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 180 84% 60%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 180 84% 15%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 180 84% 25%;
+    --input: 0 0% 14.9%;
+    --ring: 180 84% 60%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 180 84% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 180 84% 15%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 180 84% 25%;
+    --sidebar-ring: 180 84% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Hide scrollbars globally */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* WebKit */
+}
+
+/* Ensure all elements hide scrollbars */
+html,
+body,
+div,
+section,
+article,
+aside,
+nav,
+header,
+footer,
+main {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+div::-webkit-scrollbar,
+section::-webkit-scrollbar,
+article::-webkit-scrollbar,
+aside::-webkit-scrollbar,
+nav::-webkit-scrollbar,
+header::-webkit-scrollbar,
+footer::-webkit-scrollbar,
+main::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Override any existing scrollbar styles */
+.overflow-auto::-webkit-scrollbar,
+.overflow-y-auto::-webkit-scrollbar,
+.overflow-x-auto::-webkit-scrollbar,
+.overflow-scroll::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.overflow-auto,
+.overflow-y-auto,
+.overflow-x-auto,
+.overflow-scroll {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
